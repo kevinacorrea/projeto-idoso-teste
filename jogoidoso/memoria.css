@@ -1,0 +1,34 @@
+
+:root{--bg:#f6f8fb;--card:#fff;--accent:#5a9bd8}
+*{box-sizing:border-box}
+.memoria-fullscreen-body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);margin:0;padding:0;min-height:100vh}
+.memoria-app{width:100%;height:100vh;background:var(--card);padding:22px;border-radius:0;box-shadow:none;display:flex;flex-direction:column}
+h1{margin:0 0 10px;font-size:26px}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.controls button{background:var(--accent);color:#fff;border:none;padding:12px 14px;border-radius:8px;cursor:pointer;font-size:18px}
+.board{display:grid;gap:12px;flex:1}
+.card{background:#e9eef6;border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card{font-size:28px;}
+.card .front{display:flex;align-items:center;justify-content:center;font-size:48px}
+.card .back{display:flex;align-items:center;justify-content:center;font-size:34px;color:#4a4a4a}
+
+/* Styles for button-based cards (baralho) */
+.board .card{position:relative;border-radius:12px;border:2px solid #cfe6ff;background:#fff;padding:6px;overflow:hidden;display:block}
+.board .card{display:flex;align-items:center;justify-content:center}
+.board .card .front,.board .card .back{position:absolute;inset:6px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.board .card .back{background:linear-gradient(180deg,#f3f7fd,#fff);font-size:38px}
+.board .card .front{background:#fff;font-size:54px;display:none}
+.board .card.open .front{display:flex}
+.board .card.open .back{display:none}
+.board .card.matched{opacity:0.6;box-shadow:0 0 0 6px rgba(90,155,216,.12)}
+
+.card .cover{position:absolute;inset:0;background:linear-gradient(180deg,#dfeaf8,#fff);transition:opacity .18s}
+.matched{box-shadow:0 0 0 4px rgba(90,155,216,.15);}
+.back-link{display:inline-block;margin-top:14px;color:var(--accent);text-decoration:none;font-size:18px}
+
+.board{min-height:120px}
+@media(min-width:720px){.board{grid-template-columns:repeat(4,1fr);grid-auto-rows:1fr}}
+@media(max-width:719px){.board{grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr}}
+
+.board .card{min-height:120px}

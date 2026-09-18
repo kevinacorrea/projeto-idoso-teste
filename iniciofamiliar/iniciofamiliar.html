@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZELO - Dashboard</title>
+    <link rel="stylesheet" href="iniciofamiliar.css">
+    <link rel="stylesheet" href="../assistente/assistente.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="zelo2.png" alt="Zelo Logo">
+            </div>
+            
+            <nav class="sidebar-nav">
+                 <ul>
+                    <a href="../iniciofamiliar/iniciofamiliar.html" class="btn-continue">INICIO</a><br><br><br>
+                    <a href="../remediofamiliar/remediosfamiliar.html" class="btn-continue">REMÉDIOS</a><br><br><br>
+                    <a href="../lembretefamilia/lembretesfamiliar.html" class="btn-continue">LEMBRETES</a><br><br><br>
+                    <a href="../compromissofamilia/compromissosfamiliar.html" class="btn-continue">COMPROMISSOS</a><br><br><br>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="inicioidoso.html"><span class="icon">👤</span> PERFIL IDOSO</a>
+                <a href="paginainicial.html"><span class="icon">➡️</span> SAIR</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="user-pill">
+                    <div class="user-info">
+                        <span>Olá, <strong>usuário!</strong></span>
+                        <small>Idoso: Miquéias de Solsa</small>
+                    </div>
+                    <div class="user-avatar">👤</div>
+                </div>
+                <div class="notifications">
+                    🔔
+                </div>
+            </header>
+
+            <section class="dashboard-section">
+                <h2>Resumo de hoje:</h2>
+                
+                <div class="cards-container">
+                    <div class="card status-card orange">
+                        <h3>✅ REMÉDIO</h3>
+                        <p class="big-text">2/3</p>
+                        <p>tomados</p>
+                    </div>
+                    
+                    <div class="card status-card blue">
+                        <h3>⚠️ ATRASOS</h3>
+                        <p class="big-text">1</p>
+                        <p>pendente</p>
+                    </div>
+
+                    <div class="card status-card green">
+                        <h3>🗳️ COMPROMISSOS</h3>
+                        <p class="big-text">1</p>
+                        <p>hoje, às 15h</p>
+                    </div>
+                </div>
+
+                <div class="cards-container">
+                    <div class="card action-card">
+                        <h3>REMÉDIOS</h3>
+                        <p>gerenciar remédios</p>
+                    </div>
+
+                    <div class="card action-card">
+                        <h3>LEMBRETES</h3>
+                        <p>gerenciar lembretes</p>
+                    </div>
+
+                    <div class="card action-card">
+                        <h3>COMPROMISSOS</h3>
+                        <p>gerenciar compromissos</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../assistente/assistente.js"></script>
+</body>
+</html>

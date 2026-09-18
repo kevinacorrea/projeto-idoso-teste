@@ -1,0 +1,141 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Cabeçalho / Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #ffffff;
+}
+
+.logo-img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Linha indicadora abaixo do item ativo (Sobre nós) */
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1a1a1a;
+}
+
+.btn-entrar {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-entrar:hover {
+    background-color: #333333;
+}
+
+/* --- Layout Principal (Sobre Nós) --- */
+.main-container {
+    max-width: 1100px;
+    margin: 40px auto 80px auto;
+    padding: 0 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* Espaçamento entre os blocos de conteúdo */
+}
+
+/* Estrutura de cada bloco de informação */
+.info-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Estilo do título do bloco (ex: EQUIPE:) com o marcador em bullet */
+.block-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    position: relative;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.block-title::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-size: 20px;
+    top: -3px;
+}
+
+/* Caixa de texto com o fundo azulado/lilás suave do layout */
+.block-content {
+    background-color: #92a4ff; /* Tom aproximado do destaque azul/roxo da imagem */
+    padding: 15px 20px;
+    border-radius: 4px; /* Cantos levemente arredondados, conforme a imagem */
+}
+
+.block-content p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+/* Remove a margem do último parágrafo dentro do bloco para evitar espaço extra */
+.block-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 4%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-container {
+        padding: 0 4%;
+        margin-top: 20px;
+    }
+    
+    .block-content {
+        padding: 12px 15px;
+    }
+}

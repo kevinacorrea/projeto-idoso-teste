@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    height: 300px;
+    padding-bottom: 110px; /* Garante espaço para o botão SOS fixo */
+}
+
+/* Header & Logo */
+.navbar {
+    padding: 15px 5%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo img {
+    max-width: 220px; /* Corrigido para evitar estouro de tela no desktop */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layout Principal */
+.main-container {
+    max-width: 1200px;
+    margin: 10px auto 30px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.assistant-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.image-wrapper {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+}
+
+.assistant-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.btn-help {
+    background-color: #f24e4e;
+    color: #ffffff;
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 16px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    width: 100%;
+    max-width: 320px;
+}
+
+.btn-help:hover {
+    background-color: #d43b3b;
+    transform: scale(1.02);
+}
+
+.menu-container {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.instructions {
+    text-align: center;
+}
+
+.date-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.greeting {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.action-text {
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    font-weight: 800;
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Grid de Opções */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+}
+
+.grid-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    min-height: 120px;
+    transition: transform 0.15s ease, opacity 0.2s ease;
+}
+
+.grid-btn:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+.color-label {
+    font-size: 0.95rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.option-title {
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    font-weight: 800;
+    color: #000000;
+    line-height: 1.2;
+}
+
+/* Cores do Sistema */
+.btn-orange { background-color: #f7c08a; }
+.btn-orange .color-label { color: #b8540b; }
+
+.btn-blue { background-color: #497ec7; }
+.btn-blue .color-label { color: #ffffff; }
+.btn-blue .option-title { color: #ffffff; }
+
+.btn-green { background-color: #d1f0be; }
+.btn-green .color-label { color: #1e7e45; }
+
+.btn-purple { background-color: #a690c4; }
+.btn-purple .color-label { color: #351558; }
+
+.btn-red { background-color: #f24e4e; }
+.btn-red .color-label { color: #ffffff; }
+.btn-red .option-title { color: #ffffff; }
+
+/* Botão SOS Fixo */
+.btn-sos {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 14px 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    max-width: 320px;
+}
+
+.emoji {
+    font-size: 1.3rem;
+}
+
+/* Responsividade: Tablets e Telas Médias (<= 900px) */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .assistant-container, 
+    .menu-container {
+        width: 100%;
+    }
+
+    .image-wrapper {
+        max-width: 260px;
+    }
+}
+
+/* Responsividade: Celulares (<= 600px) */
+@media (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        max-width: 160px;
+    }
+
+    .options-grid {
+        grid-template-columns: 1fr; /* Coluna única para facilitar o clique no celular */
+        gap: 12px;
+    }
+
+    .grid-btn {
+        min-height: 80px;
+        padding: 15px 10px;
+    }
+
+    .btn-sos {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        width: calc(100% - 30px);
+        max-width: none;
+    }
+}

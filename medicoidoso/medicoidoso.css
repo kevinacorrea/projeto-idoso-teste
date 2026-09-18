@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+}
+
+.navbar {
+    padding: 20px 6%;
+    background-color: #ffffff;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.main-container {
+    max-width: 1300px;
+    margin: 20px auto 60px auto;
+    padding: 0 4%;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.assistant-container {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.image-wrapper {
+    width: 100%;
+    max-width: 360px;
+}
+
+.assistant-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.btn-help {
+    background-color: #c99c82; 
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 16px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-help:hover {
+    opacity: 0.9;
+}
+
+.btn-sos {
+    background-color: #f24e4e;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 14px 20px;
+    width: 100%;
+    max-width: 360px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-sos:hover {
+    background-color: #d63b3b;
+}
+
+.emoji {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.medico-container {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.main-title {
+    font-size: 38px;
+    font-weight: 900;
+    color: #27ae60; 
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.medico-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+.btn-call-doctor {
+    display: block;
+    width: 100%;
+    background-color: #d1f0be; 
+    color: #000000;
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    padding: 22px 15px;
+    border-radius: 4px;
+    letter-spacing: -0.2px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-call-doctor:hover {
+    opacity: 0.9;
+}
+
+.sintomas-box {
+    width: 100%;
+}
+
+.sintomas-input {
+    width: 100%;
+    height: 180px;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 20px; 
+    padding: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: #555555;
+    resize: none;
+    outline: none;
+}
+
+.sintomas-input::placeholder {
+    color: #555555;
+}
+
+.audio-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    gap: 25px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.audio-instruction {
+    font-size: 16px;
+    font-weight: 900;
+    color: #000000;
+    max-width: 250px;
+    text-align: right; 
+    line-height: 1.3;
+}
+
+.btn-mic {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.btn-mic:hover {
+    transform: scale(1.05);
+}
+
+.mic-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-back {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    background-color: #235454; 
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #163636;
+}
+
+.arrow-icon {
+    width: 32px;
+    height: 32px;
+}
+
+@media (max-width: 950px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .assistant-container, .medico-container {
+        width: 100%;
+    }
+
+    .audio-section {
+        justify-content: center;
+    }
+
+    .audio-instruction {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .btn-call-doctor {
+        font-size: 18px;
+        padding: 16px 10px;
+    }
+
+    .main-title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .sintomas-input {
+        font-size: 15px;
+        padding: 20px;
+    }
+}

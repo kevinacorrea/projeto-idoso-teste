@@ -1,0 +1,149 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Cabeçalho / Navbar --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #ffffff;
+}
+
+.logo-img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+/* Linha indicadora abaixo do item ativo (Contato) */
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1a1a1a;
+}
+
+.btn-entrar {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-entrar:hover {
+    background-color: #333333;
+}
+
+/* --- Layout de Contato --- */
+.main-container {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grid para alinhar horizontalmente as redes sociais */
+.social-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px; /* Espaço generoso entre cada rede social */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+}
+
+/* Estrutura de cada item de rede social */
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none; /* Remove sublinhado dos textos por ser um link */
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+/* Efeito sutil ao passar o mouse por cima */
+.social-card:hover {
+    transform: translateY(-5px);
+}
+
+.social-icon {
+    width: 140px;  /* Tamanho proporcional ao layout da imagem */
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.social-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}
+
+.social-handle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 4%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-container {
+        margin: 40px auto;
+    }
+
+    .social-grid {
+        gap: 50px; /* Reduz o espaço entre os itens no celular */
+    }
+
+    .social-icon {
+        width: 110px;
+        height: 110px;
+    }
+
+    .social-name {
+        font-size: 18px;
+    }
+}

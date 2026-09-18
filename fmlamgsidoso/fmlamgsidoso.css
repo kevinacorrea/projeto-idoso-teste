@@ -1,0 +1,258 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* --- Cabeçalho --- */
+.navbar {
+    padding: 20px 6%;
+    background-color: #ffffff;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- Layout Principal --- */
+.main-container {
+    max-width: 1300px;
+    margin: 20px auto 60px auto;
+    padding: 0 4%;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* --- Coluna da Esquerda (Assistente, Ajuda e Socorro) --- */
+.assistant-container {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.image-wrapper {
+    width: 100%;
+    max-width: 360px;
+}
+
+.assistant-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.btn-help {
+    background-color: #c99c82; /* Tom marrom claro/nude conforme imagem */
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 16px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-help:hover {
+    opacity: 0.9;
+}
+
+
+
+.btn-sos {
+    background-color: #f24e4e;
+    color: #ffffff;
+    border: none;
+    border-radius: 0; 
+    font-size: 16px;
+    font-weight: 800;
+    padding: 14px 20px;
+    width: auto;
+    max-width: 300px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    
+    /* Fixa no canto inferior direito */
+    position: fixed;
+    bottom: 20px; /* Distância do chão da tela */
+    right: 20px;  /* Distância da borda direita */
+    z-index: 1000;
+}
+
+/* Pode remover o espaçamento do topo no body caso não tenha outro elemento fixo lá */
+body {
+    padding-top: 0; 
+}
+
+
+
+
+
+.btn-sos:hover {
+    background-color: #d63b3b;
+}
+
+.emoji {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* --- Coluna da Direita (Contatos) --- */
+.contatos-container {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    width: 100%;
+}
+
+.main-title {
+    font-size: 38px;
+    font-weight: 900;
+    color: #1a1ab2; /* Azul escuro do título */
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+/* Grade de contatos */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 30px;
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Estilo do link do avatar para dar efeito de clique */
+.avatar-link {
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 50%;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.avatar-link:hover {
+    transform: scale(1.05); /* Efeito de zoom leve ao passar o mouse */
+    opacity: 0.9;
+}
+
+.avatar-link:active {
+    transform: scale(0.95); /* Efeito de encolher ao clicar */
+}
+
+.avatar-wrapper {
+    width: 85px;
+    height: 85px;
+    flex-shrink: 0;
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-name {
+    font-size: 24px;
+    font-weight: 900;
+    color: #666666;
+    line-height: 1.1;
+}
+
+.contact-relation {
+    font-size: 22px;
+    font-weight: 900;
+    color: #666666;
+    line-height: 1.1;
+}
+
+/* --- Botão Flutuante Voltar --- */
+.btn-back {
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    background-color: #235454;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #163636;
+}
+
+.arrow-icon {
+    width: 32px;
+    height: 32px;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 950px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .assistant-container, .contatos-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        row-gap: 25px;
+    }
+
+    .main-title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .avatar-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact-name, .contact-relation {
+        font-size: 20px;
+    }
+}

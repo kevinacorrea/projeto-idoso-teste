@@ -1,0 +1,346 @@
+#zelo-assistente-root {
+    --zelo-petroleo: #075b5e;
+    --zelo-petroleo-escuro: #043f41;
+    --zelo-menta: #e3f6ef;
+    --zelo-amarelo: #f4c95d;
+    --zelo-texto: #173333;
+    --zelo-borda: #b8d8d1;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--zelo-texto);
+}
+
+.zelo-assistente-trigger {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2147483000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 76px;
+    min-height: 76px;
+    padding: 14px 18px;
+    border: 4px solid #ffffff;
+    border-radius: 999px;
+    background: var(--zelo-petroleo);
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 55, 57, .28);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    transition: transform 160ms cubic-bezier(.23, 1, .32, 1), background 160ms ease, box-shadow 160ms ease;
+}
+
+.zelo-assistente-trigger:hover,
+.zelo-assistente-trigger:focus-visible {
+    background: var(--zelo-petroleo-escuro);
+    transform: translateY(-2px);
+    outline: 4px solid rgba(244, 201, 93, .78);
+    outline-offset: 3px;
+}
+
+.zelo-assistente-trigger:active {
+    transform: scale(.97);
+}
+
+.zelo-assistente-trigger svg {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 auto;
+}
+
+.zelo-assistente-trigger.is-listening {
+    background: #b42318;
+    animation: zelo-pulse 1.3s ease-in-out infinite;
+}
+
+.zelo-assistente-panel {
+    position: fixed;
+    right: 24px;
+    bottom: 116px;
+    z-index: 2147482999;
+    display: flex;
+    flex-direction: column;
+    width: min(410px, calc(100vw - 32px));
+    max-height: min(680px, calc(100vh - 145px));
+    overflow: hidden;
+    border: 2px solid var(--zelo-borda);
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 18px 55px rgba(0, 37, 39, .28);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px) scale(.98);
+    transform-origin: bottom right;
+    transition: opacity 180ms ease, transform 180ms cubic-bezier(.23, 1, .32, 1);
+}
+
+.zelo-assistente-panel.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.zelo-assistente-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 20px;
+    background: var(--zelo-petroleo);
+    color: #ffffff;
+}
+
+.zelo-assistente-title {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.zelo-assistente-subtitle {
+    margin: 5px 0 0;
+    color: #d7f6ec;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.zelo-assistente-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid rgba(255, 255, 255, .78);
+    border-radius: 50%;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.zelo-assistente-close:hover,
+.zelo-assistente-close:focus-visible {
+    background: rgba(255, 255, 255, .16);
+    outline: 3px solid var(--zelo-amarelo);
+    outline-offset: 2px;
+}
+
+.zelo-assistente-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e5eeee;
+    background: #f7fbfa;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.zelo-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #159957;
+    flex: 0 0 auto;
+}
+
+.zelo-status-dot.is-warning {
+    background: #c27803;
+}
+
+.zelo-status-dot.is-listening {
+    background: #b42318;
+}
+
+.zelo-assistente-messages {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 18px 18px 14px;
+    background: #ffffff;
+    scroll-behavior: smooth;
+}
+
+.zelo-msg {
+    max-width: 88%;
+    padding: 12px 14px;
+    border-radius: 16px;
+    font-size: 17px;
+    line-height: 1.42;
+    white-space: pre-wrap;
+}
+
+.zelo-msg-assistant {
+    align-self: flex-start;
+    border: 1px solid var(--zelo-borda);
+    border-bottom-left-radius: 5px;
+    background: var(--zelo-menta);
+}
+
+.zelo-msg-user {
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    background: #eaf0ff;
+}
+
+.zelo-assistente-quick {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 18px 14px;
+}
+
+.zelo-quick-button {
+    border: 1px solid #6d9a96;
+    border-radius: 999px;
+    padding: 9px 12px;
+    background: #ffffff;
+    color: var(--zelo-petroleo-escuro);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.zelo-quick-button:hover,
+.zelo-quick-button:focus-visible {
+    background: var(--zelo-menta);
+    outline: 3px solid rgba(244, 201, 93, .72);
+    outline-offset: 2px;
+}
+
+.zelo-assistente-composer {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    padding: 14px 18px 10px;
+    border-top: 1px solid #dce9e6;
+    background: #f7fbfa;
+}
+
+.zelo-assistente-input {
+    flex: 1 1 auto;
+    min-height: 48px;
+    max-height: 110px;
+    resize: vertical;
+    border: 2px solid #7ca5a0;
+    border-radius: 13px;
+    padding: 12px;
+    background: #ffffff;
+    color: var(--zelo-texto);
+    font-family: inherit;
+    font-size: 17px;
+}
+
+.zelo-assistente-input:focus {
+    border-color: var(--zelo-petroleo);
+    outline: 3px solid rgba(244, 201, 93, .65);
+    outline-offset: 2px;
+}
+
+.zelo-send-button,
+.zelo-mic-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    border: 0;
+    border-radius: 13px;
+    background: var(--zelo-petroleo);
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.zelo-send-button:hover,
+.zelo-send-button:focus-visible,
+.zelo-mic-button:hover,
+.zelo-mic-button:focus-visible {
+    background: var(--zelo-petroleo-escuro);
+    outline: 3px solid rgba(244, 201, 93, .78);
+    outline-offset: 2px;
+}
+
+.zelo-mic-button.is-listening {
+    background: #b42318;
+}
+
+.zelo-assistente-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 18px 15px;
+    background: #f7fbfa;
+    color: #46615f;
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.zelo-voice-toggle {
+    border: 0;
+    border-bottom: 1px dashed #46615f;
+    padding: 2px 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.zelo-fonte-grande .zelo-msg,
+.zelo-fonte-grande .zelo-assistente-input {
+    font-size: 20px;
+}
+
+.zelo-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@keyframes zelo-pulse {
+    0%, 100% { box-shadow: 0 8px 25px rgba(180, 35, 24, .3); }
+    50% { box-shadow: 0 8px 25px rgba(180, 35, 24, .3), 0 0 0 12px rgba(180, 35, 24, .14); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .zelo-assistente-trigger,
+    .zelo-assistente-panel { transition: none; }
+    .zelo-assistente-trigger.is-listening { animation: none; }
+}
+
+@media (max-width: 600px) {
+    .zelo-assistente-trigger {
+        right: 14px;
+        bottom: 14px;
+        min-width: 68px;
+        min-height: 68px;
+        padding: 12px;
+    }
+
+    .zelo-assistente-trigger span { display: none; }
+
+    .zelo-assistente-panel {
+        right: 12px;
+        bottom: 96px;
+        width: calc(100vw - 24px);
+        max-height: calc(100vh - 120px);
+    }
+
+    .zelo-assistente-messages { max-height: 36vh; }
+}

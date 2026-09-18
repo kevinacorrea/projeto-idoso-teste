@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quebra-Cabeça - Zelo</title>
+    <link rel="stylesheet" href="quebra_cabeca.css">
+    <link rel="stylesheet" href="../assistente/assistente.css">
+</head>
+<body>
+    <main class="puzzle-app">
+        <h1>Quebra-Cabeça Simples</h1>
+        <p class="instructions">Monte a imagem arrastando as peças ou clicando para trocar. Nível: 3x3</p>
+
+        <div class="controls">
+            <button id="shuffleBtn">Embaralhar</button>
+            <button id="restartBtn">Reiniciar</button>
+            <span id="moves">Movimentos: 0</span>
+        </div>
+
+        <div class="image-selector" aria-label="Selecionar imagem do quebra-cabeça">
+            <button type="button" data-img="jogoquebracabeca1.png">Arara</button>
+            <button type="button" data-img="jogoquebracabeca2.png">Cão</button>
+            <button type="button" data-img="casalidoso.png">Casal</button>
+        </div>
+
+        <div id="puzzle" class="puzzle"></div>
+
+        <a href="jogosidoso.html" class="back-link">Voltar para Jogos</a>
+    </main>
+
+    <script>document.addEventListener('DOMContentLoaded', ()=>{
+        const sel = document.querySelectorAll('.image-selector button');
+        sel.forEach(btn=>btn.addEventListener('click', (ev)=>{
+            const img = ev.currentTarget.dataset.img;
+            if (window.initPuzzle) window.initPuzzle(img);
+            sel.forEach(b=>b.classList.remove('active'));
+            ev.currentTarget.classList.add('active');
+        }));
+        if (sel[0]){
+            sel[0].classList.add('active');
+            if (window.initPuzzle) window.initPuzzle(sel[0].dataset.img);
+        }
+    });</script>
+    <script src="quebra_cabeca.js"></script>
+    <script src="script.js"></script>
+    <script src="../assistente/assistente.js"></script>
+</body>
+</html>

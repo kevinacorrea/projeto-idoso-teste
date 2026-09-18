@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #c4d0ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 25px;
+    position: fixed;
+    height: 100vh;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logo {
+    width: 130px;
+    margin-bottom: 50px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.nav-item {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.nav-item.active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-item .icon {
+    font-size: 20px;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    padding: 50px 60px;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+.actions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 650px;
+}
+
+.info-pill, .btn-action {
+    background-color: #c4d0ff;
+    padding: 16px 28px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.info-pill {
+    gap: 15px;
+    font-size: 18px;
+    cursor: default;
+    margin-bottom: 5px;
+}
+
+.btn-action {
+    text-decoration: none;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #b0beff;
+    transform: translateX(4px);
+}
+
+.btn-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-icon {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+}
+
+.btn-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.btn-arrow {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}

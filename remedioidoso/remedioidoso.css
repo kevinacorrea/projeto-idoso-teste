@@ -1,0 +1,296 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    min-height: 100vh;
+}
+
+.navbar {
+    padding: 20px 6%;
+    background-color: #ffffff;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.main-container {
+    max-width: 1300px;
+    margin: 20px auto 60px auto;
+    padding: 0 4%;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin-top: -100px;
+}
+
+.assistant-container {
+    flex: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.image-wrapper {
+    width: 100%;
+    max-width: 360px;
+}
+
+.assistant-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.btn-help {
+    background-color: #8c0000; 
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 16px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+    max-width: 360px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-help:hover {
+    background-color: #660000;
+}
+
+.btn-sos {
+    background-color: #f24e4e;
+    color: #ffffff;
+    border: none;
+    border-radius: 0; 
+    font-size: 16px;
+    font-weight: 800;
+    padding: 14px 20px;
+    width: auto;
+    max-width: 300px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    
+    /* Fixa no canto inferior direito */
+    position: fixed;
+    bottom: 20px; /* Distância do chão da tela */
+    right: 20px;  /* Distância da borda direita */
+    z-index: 1000;
+}
+
+/* Pode remover o espaçamento do topo no body caso não tenha outro elemento fixo lá */
+body {
+    padding-top: 0; 
+}
+.btn-sos:hover {
+    background-color: #d63b3b;
+}
+
+.emoji {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.remedios-container {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.main-title {
+    font-size: 38px;
+    font-weight: 900;
+    color: #2d9cdb; 
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.medication-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+.medication-info-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.info-text-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.next-med-box {
+    background-color: #fdf6d8; 
+    padding: 20px;
+    text-align: center;
+}
+
+.box-label {
+    font-size: 18px;
+    font-weight: 900;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.med-details {
+    font-size: 28px;
+    font-weight: 400;
+    color: #1a1a1a;
+}
+
+.reminder-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    gap: 20px;
+}
+
+.reminder-text {
+    font-size: 18px;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: -0.2px;
+}
+
+.medication-image-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.clock-img {
+    width: 110px; 
+    height: 110px;
+    object-fit: contain;
+}
+
+.pill-bottle-img {
+    max-width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+.action-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;        
+}
+
+.status-badge {
+    width: 100%;
+    padding: 18px;
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;     
+    border-radius: 2px;
+    background-color: #ff8a8a; 
+    color: #000000;
+}
+
+.btn-action {
+    width: 100%;
+    border: none;
+    padding: 18px;
+    font-size: 18px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;  
+    align-items: center;      
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.btn-action:hover {
+    opacity: 0.9;
+}
+
+.action-notify {
+    background-color: #d1f0be; 
+    color: #000000;
+}
+
+/* Responsividade */
+
+@media (max-width: 950px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .assistant-container, .remedios-container {
+        width: 100%;
+    }
+
+    .action-buttons-container {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .medication-info-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Coloca o relógio e a pílula lado a lado no celular */
+    .medication-image-side {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .clock-img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .pill-bottle-img {
+        max-width: 100px;
+    }
+
+    .med-details {
+        font-size: 22px;
+    }
+
+    .main-title {
+        font-size: 30px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quebra-Cabeça 2 - Zelo</title>
+    <link rel="stylesheet" href="quebra_cabeca.css">
+    <style> .puzzle-app h1{font-size:18px} </style>
+    <link rel="stylesheet" href="../assistente/assistente.css">
+</head>
+<body>
+    <main class="puzzle-app">
+        <h1>Quebra-Cabeça - Imagem 2</h1>
+        <p class="instructions">Arraste mentalmente as peças e clique para trocar. Nível: 3x3</p>
+
+        <div class="controls">
+            <button id="shuffleBtn">Embaralhar</button>
+            <button id="restartBtn">Reiniciar</button>
+            <span id="moves">Movimentos: 0</span>
+        </div>
+
+        <div id="puzzle" class="puzzle"></div>
+
+        <a href="jogosidoso.html" class="back-link">Voltar para Jogos</a>
+    </main>
+
+    <script>window.PUZZLE_IMAGE='jogoquebracabeca2.png';</script>
+    <script src="quebra_cabeca.js"></script>
+    <script src="script.js"></script>
+    <script src="../assistente/assistente.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zelo - Meus Remédios</title>
+    <link href="remedioidoso.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assistente/assistente.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="zelo.png" alt="logo zelo" width="500" height="300">
+        </div>
+    </header>
+
+    <main class="main-container">
+        
+        <section class="assistant-container">
+            <div class="image-wrapper">
+                <img src="idososorrindoapontandoparabaixo.png" alt="Assistente Zelo" class="assistant-img">
+            </div>
+
+            
+
+            <button class="btn-sos" onclick="window.location.href='#'">
+            <span class="emoji">🚨</span> PEDIR SOCORRO A FAMILIAR
+        </button>
+
+        </section>
+
+
+
+        <section class="remedios-container">
+            <h1 class="main-title">MEUS REMÉDIOS</h1>
+
+            <div class="medication-panel">
+                
+                <div class="medication-info-layout">
+                    <div class="info-text-side">
+                        <div class="next-med-box">
+                            <h2 class="box-label">PRÓXIMO REMEDIO:</h2>
+                            <p class="med-details">[Nome] às [Hora]</p>
+                        </div>
+                        
+                        <div class="reminder-box">
+                            <p class="reminder-text">VOCÊ IRÁ RECEBER UM LEMBRETE!</p>
+                        </div>
+                    </div>
+
+                    <!-- Agrupamos o relógio e a imagem do remédio lado a lado -->
+                    <div class="medication-image-side">
+                        <img src="relogio.png" alt="Relógio" class="clock-img">
+                        <img src="remedio.png" alt="Complexo Vitamínico para Idoso" class="pill-bottle-img">
+                    </div>
+                </div>
+
+                <div class="action-buttons-container">
+                    <div class="status-badge status-not-taken">
+                        AINDA NÃO TOMADO!
+                    </div>
+                    <button class="btn-action action-notify">
+                        NOTIFICAR FAMILIAR DE REMEDIO TOMADO
+
+                    </button>
+                </div>
+
+<br><br><br><br><br><br>
+                
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="remedio.js"></script>
+    <script src="../assistente/assistente.js"></script>
+</body>
+</html>

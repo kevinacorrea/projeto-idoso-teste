@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ZELO - Entrar como Familiar</title><link rel="stylesheet" href="entrarfamiliar.css"><link rel="stylesheet" href="../assistente/assistente.css"></head>
+<body><header class="navbar"><div class="logo"><img src="zelo.png" alt="logo zelo" width="500" height="300"></div></header>
+<main class="container"><section class="hero-banner"><img src="familiaidoso.png" alt="Mãos dadas" class="banner-img"><div class="banner-overlay"><h1>ENTRAR COMO FAMILIAR</h1></div></section>
+<div class="help-container"><a class="btn-help">CLIQUE AQUI PARA AJUDA</a></div>
+<section id="login-section"><h2>Entrar em outro celular ou computador</h2><p>Se você já tem cadastro e já está vinculado a um idoso, basta informar o seu número de telefone.</p>
+<form class="login-form" id="formLoginFamiliar"><div class="form-group"><label for="loginTelefone">NÚMERO DE TELEFONE</label><input type="tel" id="loginTelefone" required></div><button type="submit" class="btn-continue" style="border:none;width:100%;cursor:pointer;display:block;text-align:center">ENTRAR</button></form>
+<button type="button" id="mostrarCadastro" class="btn-help" style="border:0;cursor:pointer;width:100%;margin-top:12px">AINDA NÃO TENHO CADASTRO</button></section>
+<section id="cadastro-section" hidden><h2>Criar meu cadastro</h2><form class="login-form" id="formCadastroFamiliar"><div class="form-group"><label for="cadastroNome">NOME COMPLETO</label><input type="text" id="cadastroNome" required></div><div class="form-group"><label for="cadastroTelefone">NÚMERO DE TELEFONE</label><input type="tel" id="cadastroTelefone" required></div><div class="form-group"><label for="cadastroIdade">IDADE</label><input type="number" id="cadastroIdade" min="0" max="130" required></div><button type="submit" class="btn-continue" style="border:none;width:100%;cursor:pointer;display:block;text-align:center">CRIAR CADASTRO</button></form><button type="button" id="voltarLogin" class="btn-help" style="border:0;cursor:pointer;width:100%;margin-top:12px">VOLTAR PARA ENTRAR</button></section></main>
+<script src="familiar1.js"></script><script src="../assistente/assistente.js"></script></body></html>
